@@ -25,6 +25,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="YON-3Z-79W">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iyP-Ie-U2y">
                                 <rect key="frame" x="20" y="58" width="374" height="804"/>
                                 <subviews>
@@ -52,7 +55,7 @@
                                             <constraint firstAttribute="width" secondItem="WxR-VH-ost" secondAttribute="height" multiplier="2:3" id="cmL-te-eCD"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше, чем 5?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGp-25-Ht5" userLabel="Question Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше, чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGp-25-Ht5" userLabel="Question Label">
                                         <rect key="frame" x="0.0" y="624.5" width="374" height="99.5"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                         <color key="textColor" name="YP White"/>
@@ -107,12 +110,15 @@
                         <color key="backgroundColor" name="YP Black"/>
                         <constraints>
                             <constraint firstItem="iyP-Ie-U2y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5mw-r7-CHQ"/>
+                            <constraint firstItem="YON-3Z-79W" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Wl-ha-ZnN"/>
+                            <constraint firstItem="YON-3Z-79W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CPV-oq-1hZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iyP-Ie-U2y" secondAttribute="bottom" id="M4T-pW-3y5"/>
                             <constraint firstItem="iyP-Ie-U2y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="MND-uu-1JC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iyP-Ie-U2y" secondAttribute="trailing" constant="20" id="WoJ-kt-agj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="YON-3Z-79W" id="ioT-nQ-qtj"/>
                         <outlet property="counterLabel" destination="jx2-3S-Yhj" id="c3N-mu-N6z"/>
                         <outlet property="imageView" destination="WxR-VH-ost" id="3ge-te-yj9"/>
                         <outlet property="textLabel" destination="sGp-25-Ht5" id="9WC-fj-Qvx"/>
