@@ -12,7 +12,11 @@ protocol MovesLoading {
 }
 struct MovesLoader: MovesLoading {
     //MARK: NetworkClient
-    private let networkClient = NetworkClient()
+    private let networkClient: NetworkRouting
+    
+    init (networkClient: NetworkRouting = NetworkClient()) {
+        self.networkClient = networkClient
+    }
     
     //MARK: URL
     private var mostPopularMoviesUrl: URL {
@@ -27,9 +31,7 @@ struct MovesLoader: MovesLoading {
             switch result {
             case .success(let data):
                 do {
-                    print("Получен ответ от сервера")
                     let mostPopularMovies = try JSONDecoder().decode(MostPopularMovies.self, from: data)
-                    print(mostPopularMovies)
                     handler(.success(mostPopularMovies))
                 } catch {
                     print("Запрос вернулся с ошибкой \(error)")

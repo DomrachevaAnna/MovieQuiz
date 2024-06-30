@@ -10,9 +10,7 @@ import Foundation
 class QuestionFactory: QuestionFactoryProtocol {
     
     private weak var delegate: QuestionFactoryDelegate?
-    
     private let moviesLoader: MovesLoading
-    
     private var movies: [MostPopularMovie] = []
     
 //    private let questions: [QuizQuestion] = [
