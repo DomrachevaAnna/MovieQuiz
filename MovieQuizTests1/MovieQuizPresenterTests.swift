@@ -31,12 +31,20 @@ final class MovieQuizPresenterTests: XCTestCase {
         let emptyData = Data()
         let question = QuizQuestion(image: emptyData, text: "Question Text", correctAnswer: true)
         
-        // Act
         sut.didReceiveNextQuestion(question: question)
         
-        // Assert
         XCTAssertNotNil(viewController.step?.image)
         XCTAssertEqual(viewController.step?.question, "Question Text")
         XCTAssertEqual(viewController.step?.questionNumber, "1/10")
     }
+    
+    func testPresenterConvertModel() throws {
+        let emptyData = Data()
+        let question = QuizQuestion(image: emptyData, text: "Question Text", correctAnswer: true)
+        let viewModel = sut.convert(model: question)
+        
+        XCTAssertNotNil(viewModel.image)
+        XCTAssertEqual(viewModel.question, "Question Text")
+        XCTAssertEqual(viewModel.questionNumber, "1/10")
+        }
 }
